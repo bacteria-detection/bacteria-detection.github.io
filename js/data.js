@@ -72,7 +72,7 @@ const DEFAULT_MEMBERS = [
     photo: "assets/members/Amer.png", linkedin: "", github: "" },
   { id: "anas-alsobeh", name: "Anas M. R. AlSobeh", role: "Assistant Professor",
     affiliation: "Applied AI — Information Systems & Technology (IS&T), Utah Valley University (UVU)",
-    email: "anas.alsobeh@uvu.edu", photo: "assets/members/anas.png", linkedin: "", github: "" },
+    email: "anas.alsobeh@uvu.edu", photo: "assets/members/Anas.png", linkedin: "", github: "" },
   { id: "namariq-dhahir", name: "Namariq Dhahir", role: "Post Doc",
     affiliation: "School of Agricultural Sciences — SIUC", email: "namariq@siu.edu",
     photo: "", linkedin: "", github: "" },
