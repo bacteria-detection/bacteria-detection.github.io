@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bacterial Detection Research</title>
+  <meta name="description" content="Explainable AI and deep learning for early detection of foodborne bacterial pathogens." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-dot"></span>
+        <span id="brandName">Bacterial Detection Research</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#team">Team</a>
+        <a href="#research">Research</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+      <span class="grid-overlay"></span>
+    </div>
+    <div class="container hero-inner">
+      <span class="hero-pill">Research · Food Safety AI</span>
+      <h1 id="siteTitle">Bacterial Detection Research</h1>
+      <p class="tagline" id="siteTagline">Explainable AI for early detection of foodborne pathogens</p>
+      <p class="intro" id="siteIntro"></p>
+      <div class="hero-actions">
+        <a href="#team" class="btn btn-primary">Meet the team</a>
+        <a href="#research" class="btn btn-ghost">Explore research →</a>
+      </div>
+    </div>
+    <div class="hero-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 C360,90 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f6f8fc"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section id="team" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our researchers</span>
+        <h2 class="section-title">Meet the team</h2>
+        <p class="section-sub">Researchers across computing and agricultural sciences advancing AI for food safety.</p>
+      </div>
+      <div class="members-row" id="membersGrid"></div>
+    </div>
+  </section>
+
+  <section id="research" class="alt-bg reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Publications</span>
+        <h2 class="section-title">Research</h2>
+        <p class="section-sub">
+          Published and in-progress work on bacterial detection in microscopy imaging, combining
+          deep learning, instance segmentation, and explainable-AI methods.
+        </p>
+      </div>
+      <div class="research-grid" id="researchGrid"></div>
+    </div>
+  </section>
+
+  <section id="gallery" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Behind the scenes</span>
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-sub">Selected figures and moments from our work.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="alt-bg reveal" style="padding: 64px 0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Get in touch</span>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Reach any of the researchers via the email shown on their team card above.</p>
+      </div>
+      <div style="display:flex; justify-content:center; align-items:center; gap: 36px; flex-wrap: wrap;">
+        <img src="assets/images/usda-nifa-logo.png" alt="USDA NIFA" style="max-height: 90px; width:auto; opacity:.95;">
+        <div style="color: var(--text-soft); max-width: 420px; font-size:.95rem;">
+          Research conducted at Southern Illinois University Carbondale (SIUC)
+          supporting food safety and agricultural innovation.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>&copy; <span id="year"></span> Bacterial Detection Researchers. All rights reserved.</div>
+      <div>SIUC · UVU</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

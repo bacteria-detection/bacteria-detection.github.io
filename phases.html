@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phases of our work — Bacterial Detection Research Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-dot"></span>
+        <span>Bacterial Detection Research</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#team">Team</a>
+        <a href="index.html#research">Research</a>
+        <a href="phases.html">Phases</a>
+        <a href="index.html#impact">Impact</a>
+        <a href="index.html#future">Future</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">&larr; Back to home</a>
+      <h1>Phases of our work</h1>
+      <div class="meta">From microscope to model — the full pipeline</div>
+      <div class="authors">Data collection · Annotation · Data preparation · Model training · Inference</div>
+    </div>
+  </section>
+
+  <nav class="phase-nav">
+    <div class="container phase-nav-inner">
+      <a href="#phase-collection" class="phase-pill"><span class="phase-num">1</span> Data Collection</a>
+      <a href="#phase-annotation" class="phase-pill"><span class="phase-num">2</span> Annotation</a>
+      <a href="#phase-preparation" class="phase-pill"><span class="phase-num">3</span> Data Preparation</a>
+      <a href="#phase-model" class="phase-pill"><span class="phase-num">4</span> Model Training</a>
+      <a href="#phase-inference" class="phase-pill"><span class="phase-num">5</span> Inference</a>
+    </div>
+  </nav>
+
+  <!-- Phase 1 -->
+  <section id="phase-collection" class="phase-section reveal">
+    <div class="container">
+      <div class="phase-head">
+        <div class="phase-badge">Phase 1</div>
+        <h2 class="section-title">Data Collection</h2>
+        <p class="section-sub">
+          Time-stamped microscopy of bacterial colonies under two backgrounds (plain and onion mixture) at five
+          incubation timepoints &mdash; 2&nbsp;h, 2.5&nbsp;h, 3&nbsp;h, 3.5&nbsp;h, and 4&nbsp;h, all captured at 60&times; magnification.
+          Switch the species, then swipe or use the arrow keys to browse samples.
+        </p>
+      </div>
+
+      <div class="segmented" role="tablist" aria-label="Species">
+        <button class="seg-btn active" data-target="collection" data-species="ecoli" role="tab">E.&nbsp;coli</button>
+        <button class="seg-btn"        data-target="collection" data-species="salm"  role="tab">Salmonella</button>
+      </div>
+
+      <div class="carousel" data-carousel="collection" tabindex="0" aria-roledescription="carousel">
+        <button class="car-nav prev" data-carousel-prev aria-label="Previous">&#8249;</button>
+        <button class="car-nav next" data-carousel-next aria-label="Next">&#8250;</button>
+        <div class="car-frame"><img class="car-img" alt="" /></div>
+        <div class="car-meta">
+          <div class="car-caption" data-caption></div>
+          <div class="car-counter" data-counter></div>
+        </div>
+        <div class="car-dots" data-dots></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 2 -->
+  <section id="phase-annotation" class="phase-section alt-bg reveal">
+    <div class="container">
+      <div class="phase-head">
+        <div class="phase-badge">Phase 2</div>
+        <h2 class="section-title">Annotation</h2>
+        <p class="section-sub">
+          A short walkthrough of our manual annotation workflow (built with a Python/Tkinter tool),
+          followed by example annotation sessions for E.&nbsp;coli and Salmonella.
+        </p>
+      </div>
+
+      <div class="annotation-video">
+        <video id="annotationVideo" controls muted playsinline preload="auto">
+          <source src="assets/phases/2.Annotations/annotation_method.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-caption">Annotation walkthrough &mdash; manual masking with the CVAT AI tool.</div>
+      </div>
+
+      <div class="gif-row">
+        <figure class="gif-card">
+          <img src="assets/phases/2.Annotations/ecoli_annotation_samples.gif" alt="E. coli annotation samples" loading="lazy">
+          <figcaption><strong>E.&nbsp;coli</strong> &mdash; example annotation passes across timepoints.</figcaption>
+        </figure>
+        <figure class="gif-card">
+          <img src="assets/phases/2.Annotations/salmonella_annotation_samples.gif" alt="Salmonella annotation samples" loading="lazy">
+          <figcaption><strong>Salmonella</strong> &mdash; example annotation passes across timepoints.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 3 -->
+  <section id="phase-preparation" class="phase-section reveal">
+    <div class="container">
+      <div class="phase-head">
+        <div class="phase-badge">Phase 3</div>
+        <h2 class="section-title">Data Preparation</h2>
+        <p class="section-sub">
+          Annotations are converted to COCO format &mdash; one polygon per colony, with category labels
+          (E.&nbsp;coli / Salmonella) and per-instance bounding boxes. The interactive viewer below loads a
+          sample COCO file and overlays each polygon directly on its source image.
+        </p>
+      </div>
+
+      <div class="prep-grid">
+        <div class="prep-spec">
+          <h3>What's in a sample</h3>
+          <ul class="prep-list">
+            <li><strong>4 sample slides:</strong> 2 E.&nbsp;coli (e2p_73, e4o_70) and 2 Salmonella (s2p_14, s4o_43)</li>
+            <li><strong>41 polygon annotations</strong> total across the four images</li>
+            <li><strong>Per annotation:</strong> id, image_id, category_id, segmentation polygon, bbox, area, iscrowd</li>
+            <li><strong>Resolution:</strong> 2160&times;1620 px at 60&times; magnification</li>
+          </ul>
+          <p class="prep-hint">Click a polygon or a row in <em>Annotations</em> in the viewer to see its COCO record.</p>
+          <a class="btn btn-primary" href="assets/phases/3.Data%20Preparation/coco_specimen_viewer.html" target="_blank" rel="noopener">Open viewer in new tab &nearr;</a>
+        </div>
+        <div class="prep-viewer">
+          <iframe src="assets/phases/3.Data%20Preparation/coco_specimen_viewer.html"
+                  title="COCO Specimen Viewer"
+                  loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 4 -->
+  <section id="phase-model" class="phase-section alt-bg reveal">
+    <div class="container">
+      <div class="phase-head">
+        <div class="phase-badge">Phase 4</div>
+        <h2 class="section-title">Model Training</h2>
+        <p class="section-sub">
+          We are training and comparing about four models that span the cost/capacity spectrum &mdash; from a
+          lightweight <strong>ResNet&nbsp;DS</strong> baseline through to heavyweight foundation models like
+          <strong>SAM</strong> and <strong>DINO</strong>. The chart below shows the training and validation
+          curves across the loss terms and the mean-IoU accuracy.
+        </p>
+      </div>
+
+      <p class="model-hint">Click a model below to view its training graph.</p>
+      <div class="model-row">
+        <figure class="model-figure">
+          <div class="fig-img">
+            <img id="modelGraphImg" src="assets/phases/4.Model%20Training/losses%20comparison.png" alt="Training and validation curves" loading="lazy">
+          </div>
+          <figcaption id="modelGraphCaption">ResNet DS — lightweight baseline. Training (blue) vs. validation (orange) curves across the combined loss, Dice overlap, cross-entropy, discriminative instance loss, intra-/inter-instance variance, embedding regularization, focal imbalance, and mean IoU accuracy.</figcaption>
+        </figure>
+        <div class="model-list" id="modelList">
+          <button class="model-chip" data-model="resnetds"
+                  data-img="assets/phases/4.Model Training/ResNet_Losses.png"
+                  data-caption="ResNet DS — lightweight baseline. Training (blue) vs. validation (orange) curves across the combined loss, Dice overlap, cross-entropy, discriminative instance loss, intra-/inter-instance variance, embedding regularization, focal imbalance, and mean IoU accuracy.">
+            <span class="chip-num">01</span>
+            <div><strong>ResNet&nbsp;DS</strong><span>Lightweight baseline</span></div>
+          </button>
+          <button class="model-chip" data-model="sam"
+                  data-img="assets/phases/4.Model Training/SAM_losses.png"
+                  data-caption="SAM — foundation segmentation model. Training (blue) vs. validation (orange) curves across the loss terms and mean IoU accuracy.">
+            <span class="chip-num">02</span>
+            <div><strong>SAM</strong><span>Foundation segmentation model</span></div>
+          </button>
+          <button class="model-chip" data-model="dino"
+                  data-img="assets/phases/4.Model Training/DINO_losses.png"
+                  data-caption="DINO — self-supervised vision transformer. Training (blue) vs. validation (orange) curves across the loss terms and mean IoU accuracy.">
+            <span class="chip-num">03</span>
+            <div><strong>DINO</strong><span>Self-supervised vision transformer</span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 5 -->
+  <section id="phase-inference" class="phase-section reveal">
+    <div class="container">
+      <div class="phase-head">
+        <div class="phase-badge">Phase 5</div>
+        <h2 class="section-title">Inference</h2>
+        <p class="section-sub">
+          Sample model outputs on held-out images. Toggle between pure E.&nbsp;coli, pure Salmonella, and mixed
+          two-species samples &mdash; swipe or use the arrow keys to browse.
+        </p>
+      </div>
+
+      <div class="segmented" role="tablist" aria-label="Inference species">
+        <button class="seg-btn active" data-target="inference" data-species="ecoli" role="tab">E.&nbsp;coli</button>
+        <button class="seg-btn"        data-target="inference" data-species="salm"  role="tab">Salmonella</button>
+        <button class="seg-btn"        data-target="inference" data-species="mixed" role="tab">Mixed</button>
+      </div>
+
+      <div class="carousel" data-carousel="inference" tabindex="0" aria-roledescription="carousel">
+        <button class="car-nav prev" data-carousel-prev aria-label="Previous">&#8249;</button>
+        <button class="car-nav next" data-carousel-next aria-label="Next">&#8250;</button>
+        <div class="car-frame"><img class="car-img" alt="" /></div>
+        <div class="car-meta">
+          <div class="car-caption" data-caption></div>
+          <div class="car-counter" data-counter></div>
+        </div>
+        <div class="car-dots" data-dots></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>&copy; <span id="year"></span> Bacterial Detection Research Group.</div>
+      <div>SIUC · UVU</div>
+    </div>
+    <div class="container">
+      <div class="footer-credit">Designed by <a href="https://www.linkedin.com/in/bibek--koirala" target="_blank" rel="noopener">Bibek Koirala</a></div>
+    </div>
+  </footer>
+
+  <script src="js/phases.js"></script>
+</body>
+</html>
