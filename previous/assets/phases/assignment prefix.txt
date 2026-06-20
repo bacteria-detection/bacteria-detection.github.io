@@ -1,2 +1,0 @@
-[species][time][background]
-[e - ecoli, s - salmonella][2, 25, 3, 35, 4 -> 2hr, 2.5hr, 3hr, 3.5hr, 4hr][o - onion, p - plain]

@@ -153,7 +153,7 @@
         <p class="section-sub">
           We are training and comparing about four models that span the cost/capacity spectrum &mdash; from a
           lightweight <strong>ResNet&nbsp;DS</strong> baseline through to heavyweight foundation models like
-          <strong>SAM</strong> and <strong>DINO</strong>. The chart below shows the training and validation
+          <strong>SAMFPN</strong> and <strong>DINOFPN</strong>. The chart below shows the training and validation
           curves across the loss terms and the mean-IoU accuracy.
         </p>
       </div>
@@ -173,17 +173,17 @@
             <span class="chip-num">01</span>
             <div><strong>ResNet&nbsp;DS</strong><span>Lightweight baseline</span></div>
           </button>
-          <button class="model-chip" data-model="sam"
+          <button class="model-chip" data-model="samFPN"
                   data-img="assets/phases/4.Model Training/SAM_losses.png"
-                  data-caption="SAM — foundation segmentation model. Training (blue) vs. validation (orange) curves across the loss terms and mean IoU accuracy.">
+                  data-caption="SAMFPN — A Foundation Segmentation Model Enhanced with a FPN. Training (blue) vs. validation (orange) curves across the loss terms and mean IoU accuracy.">
             <span class="chip-num">02</span>
-            <div><strong>SAM</strong><span>Foundation segmentation model</span></div>
+            <div><strong>SAMFPN</strong><span>Foundation segmentation model</span></div>
           </button>
-          <button class="model-chip" data-model="dino"
+          <button class="model-chip" data-model="dinoFPN"
                   data-img="assets/phases/4.Model Training/DINO_losses.png"
-                  data-caption="DINO — self-supervised vision transformer. Training (blue) vs. validation (orange) curves across the loss terms and mean IoU accuracy.">
+                  data-caption="DINOFPN — self-supervised vision transformer enhanced with suitable FPN. Training (blue) vs. validation (orange) curves across the loss terms and mean IoU accuracy.">
             <span class="chip-num">03</span>
-            <div><strong>DINO</strong><span>Self-supervised vision transformer</span></div>
+            <div><strong>DINOFPN</strong><span>Self-supervised vision transformer enhanced with suitable FPN</span></div>
           </button>
         </div>
       </div>
