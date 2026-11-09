@@ -224,16 +224,22 @@
     }
   });
 
-  // Reveal-on-scroll
-  if ("IntersectionObserver" in window) {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }
+  // Reveal-on-scroll is handled by ui.js. Highlight the current phase pill
+  // and let annotation GIFs / training graphs open in the lightbox.
+  if (window.UI) {
+    UI.initScrollSpy(".phase-nav .phase-pill", "active");
+    UI.bindLightbox(document.querySelector(".gif-row"), ".gif-card", function (n) {
+      var img = n.querySelector("img");
+      return { src: img.getAttribute("src"), caption: n.querySelector("figcaption").textContent };
+    });
+    var modelFig = document.querySelector(".model-figure .fig-img");
+    if (modelFig) {
+      modelFig.setAttribute("tabindex", "0");
+      modelFig.addEventListener("click", function () {
+        var img = document.getElementById("modelGraphImg");
+        UI.openLightbox([{ src: img.getAttribute("src"), caption: document.getElementById("modelGraphCaption").textContent }], 0);
       });
-    }, { threshold: 0.08 });
-    document.querySelectorAll(".reveal").forEach(function (el) { obs.observe(el); });
-  } else {
-    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+    }
   }
 
   // === Model training chip clicks ===

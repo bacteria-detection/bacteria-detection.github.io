@@ -6,33 +6,44 @@
   <title>Phases of our work — Bacterial Detection Research Group</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#f5f7fb" />
+  <script>try{if(localStorage.getItem("site_theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='11' width='24' height='10' rx='5' fill='%232ee6d6'/%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
       <a href="index.html" class="brand">
-        <span class="brand-dot"></span>
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="8" rx="4" fill="#2ee6d6"/><path d="M21 12c1 0 1.5-1 2-1" stroke="#2ee6d6" stroke-width="1.2" stroke-linecap="round"/></svg></span>
         <span>Bacterial Detection Research</span>
       </a>
-      <nav class="nav-links">
-        <a href="index.html#team">Team</a>
+      <nav class="nav-links" aria-label="Primary">
         <a href="index.html#research">Research</a>
-        <a href="phases.html">Phases</a>
+        <a href="index.html#explore">Explore</a>
+        <a href="phases.html" class="active">Pipeline</a>
+        <a href="index.html#team">Team</a>
         <a href="index.html#impact">Impact</a>
-        <a href="index.html#future">Future</a>
+        <a href="index.html#gallery">Gallery</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
       </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme">
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
   <section class="detail-hero">
     <div class="container">
       <a href="index.html" class="back-link">&larr; Back to home</a>
-      <h1>Phases of our work</h1>
-      <div class="meta">From microscope to model — the full pipeline</div>
-      <div class="authors">Data collection · Annotation · Data preparation · Model training · Inference</div>
+      <div class="meta">PIPELINE · 5 PHASES</div>
+      <h1>From microscope <span class="grad-text">to model</span></h1>
+      <div class="authors">Follow a sample through data collection, annotation, data preparation, model training, and inference — every step is interactive.</div>
     </div>
   </section>
 
@@ -231,6 +242,9 @@
     </div>
   </footer>
 
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
   <script src="js/phases.js"></script>
 </body>
 </html>
