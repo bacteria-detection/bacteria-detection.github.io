@@ -2,10 +2,10 @@
 // edits to localStorage. Each key falls back to defaults when missing.
 
 const LS_KEYS = {
-  researches: "site_researches_v1",
-  members: "site_members_v1",
-  gallery: "site_gallery_v1",
-  site: "site_meta_v1",
+  researches: "site_researches_v2",
+  members: "site_members_v2",
+  gallery: "site_gallery_v2",
+  site: "site_meta_v2",
   auth: "site_auth_v1"
 };
 
